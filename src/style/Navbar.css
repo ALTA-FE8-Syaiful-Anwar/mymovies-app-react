@@ -1,0 +1,38 @@
+.navbar {
+    background-color: #000;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    position: fixed;
+    width: 100%;
+}
+
+.nav {
+    display: flex;
+}
+
+.home {
+    padding-left: 50px;
+    padding-right: 20px;
+}
+
+.list-nav {
+    padding-top: 8px;
+    padding-bottom: 15px;
+}
+
+.item-nav li {
+    list-style-type: none;
+    padding-left: 50px;
+    font-weight: bolder;
+    display: inline;
+}
+
+.search{
+    width: 300px;
+    vertical-align: middle;
+    white-space: nowrap;
+    padding-left: 50px;
+    padding-top: 8px;
+    padding-bottom: 15px;
+}
