@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MoviesCard from './components/MoviesCard';
-import Navbar from './components/Navbar';
+import Nav from './components/Navbar';
 import './App.css';
 import axios from 'axios';
 
@@ -31,11 +31,11 @@ export default class App extends Component {
 
     return (
       <div className="bg">
-        <Navbar />
+        <Nav />
         <div>
           <div className="container">
             { listMovies.map((item) => {
-                return <MoviesCard src={IMG_API+item.poster_path} title={item.title} subTitle={item.subTitle}/>
+                return <MoviesCard src={IMG_API+item.poster_path} title={item.title} release_date={item.release_date}/>
             })},
           </div>
         </div>

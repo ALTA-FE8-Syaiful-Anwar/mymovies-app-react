@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import '../style/Navbar.css';
-import nav from 'react-bootstrap/Navbar';
-import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
 
-export default class Navbar extends Component {
+export default class Nav extends Component {
   render() {
     return (
-      <nav className="navbar">
+      <Navbar className="navbar" fixed="top">
           <div className="nav">
               <h1 className="home">MovieKece</h1>
               <div className="list-nav">
@@ -22,7 +21,7 @@ export default class Navbar extends Component {
                 </div>
               </div>
           </div>
-      </nav>
+      </Navbar>
     )
   }
 }
