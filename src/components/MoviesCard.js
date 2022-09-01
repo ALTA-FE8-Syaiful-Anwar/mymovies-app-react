@@ -6,7 +6,7 @@ export default class MoviesCard extends Component {
     return (
       <div className="container">
         <div className="containerCard">
-          <img className="image" src={this.props.src} />
+          <img className="image" src={this.props.src} alt='' />
           <p className="title">{this.props.title}</p>
           <p className="subTitle">{this.props.subTitle}</p>
         </div>
