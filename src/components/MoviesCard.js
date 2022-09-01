@@ -8,7 +8,7 @@ export default class MoviesCard extends Component {
         <div className="containerCard">
           <img className="image" src={this.props.src} alt='' />
           <p className="title">{this.props.title}</p>
-          <p className="subTitle">{this.props.release_date}</p>
+          <p className="subTitle">Release: {this.props.release_date}</p>
         </div>
       </div>
     )
