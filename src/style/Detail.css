@@ -1,9 +1,9 @@
 .content {
-    padding-top: 200px;
+    padding-top: 120px;
     padding-bottom: 100px;
     display: grid;
     grid-template-columns: auto auto;
-    background-color: rgba(53, 52, 52, 0.945);
+    background-color: #b1b1b1;
     padding-left: 100px;
     padding-right: 100px;
     color: whitesmoke;
@@ -13,13 +13,10 @@
     padding-right: 100px;
 }
 .content-image img {
-    width: 500px;
+    width: 400px;
+    height: 600px;
 }
 .content-detail {
-    padding-top: 50px;
-}
-.content-overview Button:hover {
-    background-color: rgba(245, 245, 245, 0.747);
-    color: black;
-    border-color: whitesmoke;
+    padding-top: 20px;
+    font-weight: bold;
 }

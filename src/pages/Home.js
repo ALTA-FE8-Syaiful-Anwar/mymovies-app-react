@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from '../withRouter';
 import Navi from '../components/Navbar';
 import CustomCard from '../components/CustomCard';
-import { Container, Row, Col } from 'react-bootstrap';
+import Detail from './Detail';
 import '../style/Home.css';
 import '../App.css';
 import axios from 'axios';
@@ -28,19 +28,20 @@ class Home extends Component {
       });
   }
 
-  handleDetail (item) {
-    this.props.navigate("/Detail", {
-      state: {
-        src: IMG_API+item.poster_path,
-        title: item.title,
+  handleDetailPage (item) {
+   this.props.navigate("/detail", {
+     state: {
+       src: IMG_API+item.poster_path,
+       title: item.title,
         original_title: item.original_title,
         genre: item.genre_ids,
-        release: release_date,
-        rating: item.vite_average,
+        release: item.release_date,
+        rating: item.vote_average,
         popularity: item.popularity,
-        description: item.overview
+        description: item.overview,
       },
     });
+    console.log("Pencet");
   }
 
   render() {
@@ -48,13 +49,13 @@ class Home extends Component {
     return (
       <div className="bg">
         <Navi />
-          <div className="list-movies">
+          <div className="list-movies" style={{display:"flex", flexWrap:"wrap"}}>
             { listMovies.map((item) => {
                 return (<CustomCard 
                 src={IMG_API+item.poster_path} 
                 title={item.title} 
                 release_date={item.release_date}
-                onClick={() => this.handleDetail(item)}/>);
+                onClick={() => this.handleDetailPage(item)}/>);
             })}
            </div>
         </div>

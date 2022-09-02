@@ -13,8 +13,8 @@ export default class App extends Component {
       <BrowserRouter>
         <Routes>
           <Route exact path="/" element={<Home />} />
-          <Route exact path="/library" element={<Library />} />
-          <Route exact path="/Detail" element={<Detail />} />
+          <Route path="/library" element={<Library />} />
+          <Route path="/detail" element={<Detail />} />
         </Routes>
       </BrowserRouter>
     );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navbar from '../components/Navbar';
+import Navi from '../components/Navbar';
 import { withRouter } from '../withRouter';
 import { Button } from 'react-bootstrap';
 import '../style/Detail.css';
@@ -13,32 +13,32 @@ class Detail extends Component {
   render() {
     return (
       <div>
-        <Nav />
+        <Navi />
         <div className="content">
           <div className="content-image">
-            <img src={this.props.location.state.image} />
+            <img src={this.props.location.state.src} />
           </div>
           <div className="content-detail">
             <h2>{this.props.location.state.title}</h2>
-            <p>{this.props.location.state.original_state}</p>
+            <p>{this.props.location.state.original_title}</p>
             <hr></hr>
-            <p>Genre : {this.props.location.state.genre_ids}</p>
+            <p>Genre : {this.props.location.state.genre}</p>
             <hr></hr>
-            <p>Release : {this.props.location.state.release_date}</p>
+            <p>Release : {this.props.location.state.release}</p>
             <hr></hr>
-            <p>Rating : {this.props.location.state.vite_average}</p>
+            <p>Rating : {this.props.location.state.rating}</p>
             <hr></hr>
             <p>Popularity : {this.props.location.state.popularity}</p>
             <hr></hr>
-          </div>
-          <div className="content-overview">
             <h4>Overview</h4>
-            <p>{this.props.location.state.overview}</p>
-          </div>
-          <div className="content-button">
+            <p>{this.props.location.state.description}</p>
+            <hr></hr>
             <Button onClick={(value) => this.goBack(value)}>Show More</Button>
           </div>
         </div>
+        <div className="content-overview">
+            
+          </div>
       </div>
     );
   }
