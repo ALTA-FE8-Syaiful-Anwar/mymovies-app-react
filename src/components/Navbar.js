@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+import { withRouter } from '../withRouter';
+import { Nav, Navbar } from 'react-bootstrap';
 import '../style/Navbar.css';
 
-export default class Navbar extends Component {
+class Navi extends Component {
   render() {
     return (
-      <nav className="navbar">
+      <Navbar className="navbar" fixed="top">
           <div className="nav">
               <h1 className="home">MovieKece</h1>
               <div className="list-nav">
                   <ul className="item-nav">
-                      <li>Home</li>
-                      <li>Your Library</li>
+                      <li href="#Home.js">Home</li>
+                      <li href="Library.js">Your Library</li>
                   </ul>
               </div>
               <div className="box">
@@ -20,7 +22,9 @@ export default class Navbar extends Component {
                 </div>
               </div>
           </div>
-      </nav>
+      </Navbar>
     )
   }
 }
+
+export default withRouter(Navi);
