@@ -28,8 +28,8 @@ class Home extends Component {
       });
   }
 
-  handleDetailpage (item) {
-    this.props.navigate("/detail", {
+  handleDetail (item) {
+    this.props.navigate("/Detail", {
       state: {
         src: IMG_API+item.poster_path,
         title: item.title,
@@ -54,7 +54,7 @@ class Home extends Component {
                 src={IMG_API+item.poster_path} 
                 title={item.title} 
                 release_date={item.release_date}
-                onClick={() => this.handleDetailpage(item)}/>);
+                onClick={() => this.handleDetail(item)}/>);
             })}
            </div>
         </div>
