@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { withRouter } from '../withRouter';
+import { Nav, Navbar } from 'react-bootstrap';
 import '../style/Navbar.css';
-import Navbar from 'react-bootstrap/Navbar';
 
-export default class Nav extends Component {
+class Navi extends Component {
   render() {
     return (
       <Navbar className="navbar" fixed="top">
@@ -10,8 +11,8 @@ export default class Nav extends Component {
               <h1 className="home">MovieKece</h1>
               <div className="list-nav">
                   <ul className="item-nav">
-                      <li>Home</li>
-                      <li>Your Library</li>
+                      <li href="#Home.js">Home</li>
+                      <li href="Library.js">Your Library</li>
                   </ul>
               </div>
               <div className="box">
@@ -25,3 +26,5 @@ export default class Nav extends Component {
     )
   }
 }
+
+export default withRouter(Navi);

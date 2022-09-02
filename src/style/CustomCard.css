@@ -8,7 +8,7 @@
     margin-left: 45px;
     margin-top: 20px;
     width: 246px;
-    height: 450px;
+    height: 470px;
     border-style: groove;
     background-color: #fff;
     text-align: center;
@@ -26,4 +26,8 @@
 
 .subTitle{
     font-style: italic;
+}
+
+.button-detail Button {
+    width: 100%;
 }
