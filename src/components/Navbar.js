@@ -1,10 +1,8 @@
-import React, { Component } from 'react';
-import { withRouter } from '../withRouter';
+import React, { useState, useEffect } from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 import '../style/Navbar.css';
 
-class Navi extends Component {
-  render() {
+const Navi =() => {
     return (
       <Navbar className="navbar" fixed="top">
           <div className="nav">
@@ -23,8 +21,7 @@ class Navi extends Component {
               </div>
           </div>
       </Navbar>
-    )
-  }
-}
+    );
+};
 
-export default withRouter(Navi);
+export default (Navi);

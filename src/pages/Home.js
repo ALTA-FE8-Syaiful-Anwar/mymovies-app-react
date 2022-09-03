@@ -8,13 +8,13 @@ import '../style/Home.css';
 import '../App.css';
 import axios from 'axios';
 
-const IMG_API = "https://image.tmdb.org/t/p/original/";
-
 const Home = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
   const[movies, setMovies] = useState([]);
+
+const IMG_API = "https://image.tmdb.org/t/p/original/";
 
 const getMovies = async () => {
     await axios
