@@ -1,0 +1,22 @@
+.content {
+    padding-top: 120px;
+    padding-bottom: 100px;
+    display: grid;
+    grid-template-columns: auto auto;
+    background-color: #b1b1b1;
+    padding-left: 100px;
+    padding-right: 100px;
+    color: whitesmoke;
+}
+.content-image {
+    width: fit-content;
+    padding-right: 100px;
+}
+.content-image img {
+    width: 400px;
+    height: 600px;
+}
+.content-detail {
+    padding-top: 20px;
+    font-weight: bold;
+}
