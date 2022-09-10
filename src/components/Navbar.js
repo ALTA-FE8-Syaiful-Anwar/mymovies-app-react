@@ -1,26 +1,38 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
+import Nav from 'react-bootstrap/Nav';
+import Navbar from 'react-bootstrap/Navbar';
+import NavDropdown from 'react-bootstrap/NavDropdown';
 import '../style/Navbar.css';
+import { useNavigate } from 'react';
 
-export default class Navbar extends Component {
-  render() {
+const Navi =() => {
     return (
-      <nav className="navbar">
-          <div className="nav">
-              <h1 className="home">MovieKece</h1>
-              <div className="list-nav">
-                  <ul className="item-nav">
-                      <li>Home</li>
-                      <li>Your Library</li>
-                  </ul>
-              </div>
-              <div className="box">
-                <div className="search">
-                    <span className="icon"><i className="fa fa-search"></i></span>
-                    <input type="search" id="search" placeholder="Search..." />
-                </div>
-              </div>
-          </div>
-      </nav>
-    )
-  }
-}
+      <Navbar className="navbar" fixed="top" bg="dark" expand="lg" variant="dark">
+      <Container>
+        <Navbar.Brand href="#home">MovieKece</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="#home">Home</Nav.Link>
+            <Nav.Link href="#link">Favorite</Nav.Link>
+            <NavDropdown title="Lebih Banyak" id="basic-nav-dropdown">
+              <NavDropdown.Item href="#action/3.1">Drama</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.2">
+                Film
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Anime</NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.4">
+                K-Drama
+              </NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+    );
+};
+
+export default (Navi);

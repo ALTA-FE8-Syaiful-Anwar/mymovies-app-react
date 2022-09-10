@@ -1,0 +1,11 @@
+.bg {
+    background-color: #b1b1b1;
+    padding-top: 120px;
+    padding-bottom: 50px;
+}
+.list-movie {
+    grid-template-columns: auto auto auto auto;
+    gap: 30px;
+    margin-bottom: 100px;
+    justify-content: center;
+}
