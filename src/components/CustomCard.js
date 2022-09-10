@@ -1,15 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Card, Button, } from 'react-bootstrap';
 import '../style/Home.css';
 import '../style/CustomCard.css';
 
 
-const CustomCard = (props) => {
+const CustomCard = (props, onClickDetail, onClickFavorite) => {
 
     return (
       <Card className="containerCard" style={{ width: '18rem' }}>
         <Card.Img className="image" src={props.src} alt='' />
-        <Button className="button-library" onClick={props.onClick}>Add to Library</Button>
+        <Button className="button-favorite" onClick={props.onClickFavorite}>Add to Favorite</Button>
   
         <Card.Body>
           <Card.Title className="title">{props.title}</Card.Title>
@@ -17,7 +17,7 @@ const CustomCard = (props) => {
           Release: {props.release_date}
           </Card.Text>
         </Card.Body>
-        <Button className="button-detail" onClick={props.onClick}>Detail</Button>
+        <Button className="button-detail" onClick={props.onClickDetail}>Detail</Button>
       </Card>
     );
   };

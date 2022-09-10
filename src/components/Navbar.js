@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
+import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import '../style/Navbar.css';
+import { useNavigate } from 'react';
 
 const Navi =() => {
     return (
@@ -14,7 +17,7 @@ const Navi =() => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Your Library</Nav.Link>
+            <Nav.Link href="#link">Favorite</Nav.Link>
             <NavDropdown title="Lebih Banyak" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Drama</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">

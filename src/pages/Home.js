@@ -1,30 +1,29 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import Navi from '../components/Navbar';
 import CustomCard from '../components/CustomCard';
-import Detail from './Detail';
-import Library from './Library';
+import Favorite from '../pages/Favorite';
 import '../style/Home.css';
 import '../App.css';
 import axios from 'axios';
 
+const IMG_API = "https://image.tmdb.org/t/p/original/";
+const movieApi = "https://api.themoviedb.org/3/movie/now_playing?api_key=475c85fdf5778f8e64fcaa2bd0c2a2a8&language=en-US&page=1";
+
 const Home = () => {
   const location = useLocation();
   const navigate = useNavigate();
-
+  const {addFavorite} = useContext(Favorite);
   const[movies, setMovies] = useState([]);
-
-const IMG_API = "https://image.tmdb.org/t/p/original/";
 
 const getMovies = async () => {
     await axios
-      .get('https://api.themoviedb.org/3/movie/now_playing?api_key=475c85fdf5778f8e64fcaa2bd0c2a2a8&language=en-US&page=1')
+      .get(movieApi)
       .then((response) => {
         setMovies(
           response.data.results);
         })
-      .catch((error) => {z
-        alert(error);
+      .catch((error) => {alert(error);
       });
   };
 
@@ -53,10 +52,11 @@ const getMovies = async () => {
         <div className="list-movies" style={{display:"flex", flexWrap:"wrap"}}>
           { movies.map((item) => {
             return (<CustomCard 
+              onClickFavorite={() => handleClickFavorite(item)}
               src={IMG_API+item.poster_path} 
               title={item.title} 
               release_date={item.release_date}
-              onClick={() => handleClick(item)}/>);
+              onClickDetail={() => handleClickDetail(item)}/>);
           })}
         </div>
     </div>
